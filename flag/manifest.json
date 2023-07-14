@@ -1,0 +1,22 @@
+{
+    "name": "Flag",
+    "description": "Learn Flags",
+    "start_url": "/",
+    "lang": "de-DE",
+    "theme_color": "#16263a",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "icons/icon-192-maskable.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "icons/icon-512-maskable.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ]
+  }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="styles.css">
+    <title>Flaggen</title>
+    <meta name="description" content="Fun with Flags">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#16263a">
+</head>
+<body>
+    <div id="settings" class="window" style="display: flex;">
+        <div id="settingsContent" class="windowContent" >
+            <h1>Neues Spiel</h1>
+            <div id="regions">
+                <button onclick="toggleCheckbox(0)"><img src="./icons/check-box.svg" alt="check-box" width="30px" height="30px"> Europa</button>
+                <button onclick="toggleCheckbox(1)"><img src="./icons/check-box.svg" alt="check-box" width="30px" height="30px"> Africa</button>
+                <button onclick="toggleCheckbox(2)"><img src="./icons/check-box.svg" alt="check-box" width="30px" height="30px"> Nordamerika</button>
+                <button onclick="toggleCheckbox(3)"><img src="./icons/check-box.svg" alt="check-box" width="30px" height="30px"> Südamerika</button>
+                <button onclick="toggleCheckbox(4)"><img src="./icons/check-box.svg" alt="check-box" width="30px" height="30px"> Mittelamerika</button>
+                <button onclick="toggleCheckbox(5)"><img src="./icons/check-box.svg" alt="check-box" width="30px" height="30px"> Asien</button>
+                <button onclick="toggleCheckbox(6)"><img src="./icons/check-box.svg" alt="check-box" width="30px" height="30px"> Ozeanien</button>
+            </div>
+            <button class="menuButton" onclick="startGame()">LOS</button>
+        </div>
+    </div>
+    <div id="endScreen" class="window" style="display: none;">
+        <div id="endScreenContent" class="windowContent">
+            <h1>Fertig</h1>
+            <button class="menuButton" onclick="restart()">Neue Runde</button>
+        </div>
+    </div>
+    <div class="infoContainer">
+        <button onclick="restart()" class="restartButton" id="restartButton" style="display: none;"><img src="replay.svg" alt="replay" width="40px" height="40px"></button>
+        <h2 id="countryCount"></h2>
+    </div>
+    <div class="imageContainer">
+        <img src="https://flagcdn.com/aq.svg" alt="A Flag" id="flag" class="flag">
+    </div>
+    <br>
+    <p id="tip" style="visibility: hidden;">_</p>
+    <div id="guess">
+        <input type="search" name="guessField" id="guessField" style="border-radius: 10px;" aria-label="Ländereingabe">
+        <div id="suggestions" class="suggestions"></div>
+    </div>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
+    <script>
+        if("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js")
+        }
+    </script>
+</body>
+</html>

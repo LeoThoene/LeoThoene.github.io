@@ -1,0 +1,278 @@
+:root {
+    --background-color: rgb(22, 38, 58);
+    --acent: rgb(220, 56, 45);
+    --acent-hover: rgb(224, 76, 65);
+    --main-color: rgb(255, 255, 255);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.flag {
+    height: calc(0.35256410 * 100vw);
+    max-height: 300px;
+}
+
+#guess {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#guess.reverse {
+    flex-direction: column-reverse;
+    padding: 0px;
+    height: calc(100vh - (min(0.35256410 * 100vw, 300px)) - env(keyboard-inset-height, 0px) - 236px);
+    padding-bottom: auto;
+    max-height: 200px;
+}
+
+#guessField.reverse {
+    max-width: 100%;
+}
+
+#suggestions.reverse {
+    max-width: 100%;
+    flex-direction: column-reverse;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.suggestion.reverse {
+    max-width: 100%;
+}
+
+
+
+
+#guessField {
+    box-sizing: border-box;
+    background-color: var(--main-color);
+    padding: 5px;
+    border: none;
+    width: 100%;
+    max-width: 755px;
+    height: 40px;
+    font-size: 20px;
+    appearance: none;
+}
+
+#guessField:focus {
+    outline: none;
+}
+
+
+
+.suggestion {
+    box-sizing: border-box;
+    background-color: var(--main-color);
+    padding: 5px;
+    width: 100%;
+    max-width: 755px;
+    min-height: 40px;
+    line-height: 30px;
+    border-top: solid 1px rgb(209, 209, 209);
+}
+
+.suggestions {
+    width: 100%;
+    max-width: 755px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    max-height: calc(100vh - 600px);
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+.suggestions::-webkit-scrollbar {
+    display: none;
+}
+
+.suggestions {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.activeSuggestion {
+    background-color: var(--acent);
+    color: white;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+#countryCount {
+    text-align: center;
+    width: 100%;
+}
+
+.window {
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+}
+
+
+.windowContent {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background-color: var(--main-color);
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px -3px rgba(0, 0, 0, 0.47);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menuButton {
+    height: 50px;
+    width: 100%;
+    max-width: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--acent);
+    color: white;
+}
+
+#regions {
+    display: grid;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#regions button {
+    color: white;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    display: flex;
+    flex-wrap: nowrap;
+    line-height: 24px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#regions button:hover:not(.inactiveButton) {
+    background-color: var(--acent-hover);
+}
+
+@media only screen and (min-width: 370px) {
+    #regions button:last-child {
+        grid-area: 4 / 1 / 5 / 3;
+    }
+}
+
+#regions button:last-child {
+    padding-bottom: 15px;
+}
+
+#regions button.inactiveButton:hover {
+    background-color: rgb(43, 59, 73);
+}
+
+.inactiveButton {
+    background-color: rgb(34, 52, 68);
+}
+
+#regions button:not(.inactiveButton) {
+    background-color: var(--acent);
+}
+
+
+input[type=checkbox] {
+    transform: scale(2);
+}
+
+#advanvedSettings {
+    padding: 10px;
+}
+
+.restartButton {
+    margin: 20px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#countryCount {
+    font-size: 36pt;
+    text-align: end;
+    height: 50px;
+    margin: 20px;
+    margin-bottom: 40px;
+    margin-right: 20px;
+}
+
+.infoContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 755px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#tip {
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+#countryCount {
+    color: white;
+}
+
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=search]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
