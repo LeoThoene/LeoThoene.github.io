@@ -221,12 +221,12 @@ function toggleCheckbox(index) {
     box = regions.children[index]
     if (box.classList.contains("inactiveButton")) {
         box.classList.remove("inactiveButton")
-        box.children[0].src = "./icons/check-box.svg"
+        box.children[0].src = "./check-box.svg"
         tickNumber++
     } else {
         if (tickNumber > 1) {
             box.classList.add("inactiveButton")
-            box.children[0].src = "./icons/check-box-outline-blank.svg"
+            box.children[0].src = "./check-box-outline-blank.svg"
             tickNumber--
         }
     }

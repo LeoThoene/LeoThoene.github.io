@@ -8,7 +8,8 @@ function createFlagCacheList() {
     return temp
 }
 
-let filesToCache = ["./index.html", "./index.js", "./data.js", "./styles.css", "./replay.svg", "./favicon.ico", "./icons/"]
+let filesToCache = ["./index.html", "./index.js", "./data.js", "./styles.css", "./replay.svg", "./favicon.ico", "check-box.svg", "check-box-outline-blank.svg"]
+//, "./index.js", "./data.js", "./styles.css", "./replay.svg", "./favicon.ico", "./icons/"
 let flagUrlList = createFlagCacheList()
 urlsToCache = filesToCache.concat(flagUrlList)
 
@@ -17,7 +18,8 @@ self.addEventListener("install", event => {
     event.waitUntil(
         caches.open("pwa-assets")
             .then(cache => {
-                cache.addAll(urlsToCache)
+                cache.addAll(filesToCache)
+                cache.addAll(flagUrlList)
             })
     )
 })
