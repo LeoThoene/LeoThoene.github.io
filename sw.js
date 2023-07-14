@@ -25,13 +25,13 @@ self.addEventListener("install", event => {
 })
 
 
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", function (event) {
     event.respondWith(
-        caches.match(event.request)
-            .then(cachedResponse => {
-                // It can update the cache to serve updated content on the next request
-                return cachedResponse || fetch(event.request);
+        caches.match(event.request).then(function (response) {
+            if (response) {
+                return response;
             }
-            )
-    )
+            return fetch(event.request);
+        })
+    );
 });
