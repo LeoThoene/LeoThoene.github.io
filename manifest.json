@@ -4,6 +4,7 @@
     "start_url": "/",
     "lang": "de-DE",
     "theme_color": "#16263a",
+    "background_color": "#16263a",
     "display": "standalone",
     "icons": [
       {

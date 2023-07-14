@@ -3,6 +3,7 @@
     --acent: rgb(220, 56, 45);
     --acent-hover: rgb(224, 76, 65);
     --main-color: rgb(255, 255, 255);
+    --bar-height: 0px;
 }
 
 html,
@@ -40,9 +41,8 @@ body {
 #guess.reverse {
     flex-direction: column-reverse;
     padding: 0px;
-    height: calc(100vh - (min(0.35256410 * 100vw, 300px)) - env(keyboard-inset-height, 0px) - 236px);
+    height: calc(100vh - (min(0.35256410 * 100vw, 300px)) - env(keyboard-inset-height, 0px) - 180px - var(--bar-height));
     padding-bottom: auto;
-    max-height: 200px;
 }
 
 #guessField.reverse {
@@ -267,6 +267,12 @@ input[type=search]::-ms-reveal {
     display: none;
     width: 0;
     height: 0;
+}
+
+#control-height {
+    height: 100vh;
+    width: 0;
+    position: absolute;
 }
 
 /* clears the 'X' from Chrome */

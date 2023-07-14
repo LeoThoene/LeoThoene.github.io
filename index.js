@@ -271,3 +271,9 @@ function createFlagCacheList() {
     }
     return JSON.stringify(temp)
 }
+
+const actualHeight = window.innerHeight;
+const elementHeight = document.querySelector('#control-height').clientHeight;
+
+const barHeight = elementHeight - actualHeight;
+document.documentElement.style.setProperty('--bar-height', barHeight + 'px');
