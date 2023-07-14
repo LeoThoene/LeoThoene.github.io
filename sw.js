@@ -8,7 +8,7 @@ function createFlagCacheList() {
     return temp
 }
 
-let filesToCache = ["index.html", "index.js", "data.js", "styles.css", "replay.svg", "favicon.ico", "/icons/"]
+let filesToCache = ["./index.html", "./index.js", "./data.js", "./styles.css", "./replay.svg", "./favicon.ico", "./icons/"]
 let flagUrlList = createFlagCacheList()
 urlsToCache = filesToCache.concat(flagUrlList)
 
